@@ -1,6 +1,6 @@
 ﻿namespace Nudes.Email
 {
-    public class EmailMessageRequest
+    public class EmailMessageView
     {
         public string Subject { get; set; }
         public string Content { get; set; }

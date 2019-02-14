@@ -1,4 +1,8 @@
-﻿namespace Nudes.Email.Smtp
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Nudes.Email.Smtp
 {
     public class SmtpEmailServiceConfiguration
     {
