@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RazorEngine.Configuration;
+using RazorEngine.Templating;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
@@ -41,6 +43,14 @@ namespace Nudes.Email.Smtp
                     await client.SendMailAsync(emailMessage);
                 }
             }
+        }
+
+        public async Task SendEmailWithBodyTemplate(string subject, string bodyTemplate, object model, params string[] emails)
+        {
+            var config = new TemplateServiceConfiguration();
+            var service = RazorEngineService.Create(config);
+            var content = service.RunCompile(bodyTemplate, Guid.NewGuid().ToString(), null, model);
+            await SendEmail(subject: subject, content: content, emails: emails);
         }
 
         protected virtual SmtpClient CreateClient()

@@ -10,5 +10,6 @@ namespace Nudes.Email
         Task SendEmail(EmailMessageView emailMessage, (Stream, String)[] attachments, params string[] emails);
         Task SendEmail(string subject, string content, params string[] emails);
         Task SendEmail(string subject, string content, (Stream, String)[] attachments, params string[] emails);
+        Task SendEmailWithBodyTemplate(string subject, string bodyTemplate, object model, params string[] emails);
     }
 }
