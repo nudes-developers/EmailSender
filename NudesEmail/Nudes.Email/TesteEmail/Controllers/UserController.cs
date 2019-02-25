@@ -13,15 +13,9 @@ namespace TesteEmail.Controllers
             return View();
         }
         
-        public IActionResult teste()
-        {
-            return View();
-        }
-
         public IActionResult Teste2()
         {
             return View(User);
         }
-
     }
 }

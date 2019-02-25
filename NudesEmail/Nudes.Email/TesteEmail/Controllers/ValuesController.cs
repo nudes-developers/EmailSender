@@ -1,6 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -51,8 +50,13 @@ namespace TesteEmail.Controllers
         [HttpGet("teste")]
         public async Task Testar()
         {
-            await _testeService.SendEmail(new Nudes.Email.EmailMessageView { Subject = "teste", Content = "" },"guimabarros01@gmail.com",new { Nome = "Rodrigo", Idade = "20"});
+            await _testeService.SendEmailWithTemplate(new Nudes.Email.EmailMessageView { Subject = "teste", Content = "" }, "teste@gmail.com", new { Nome = "NomeTeste", Idade = "20" });
         }
 
-    }
+        [HttpPost("email")]
+        public async Task SendEmailTest([FromBody] EmailViewModel model)
+        {
+            await _testeService.SendEmailTeste(model.Subject, model.Content, model.Email);
+        }
+    }    
 }

@@ -13,20 +13,18 @@ namespace TesteEmail
             _emailService = emailService;
         }
 
-        public async Task SendEmail(EmailMessageView message, string email, object model)
+        public async Task SendEmailWithTemplate(EmailMessageView message, string email, object model)
         {
-            try
-            {
-                var template = GetTemplateHtml();
+            var template = GetTemplateHtml();
 
-                message.Content = template;
-                await _emailService.SendEmailWithBodyTemplate(message.Subject, message.Content, model, email);
+            message.Content = template;
+            await _emailService.SendEmailWithBodyTemplate(message.Subject, message.Content, model, email);
+        }
 
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+        public async Task SendEmailTeste(string subject, string content, string email)
+        {
+            // method used to send emails
+            await _emailService.SendEmail(subject, content, email);
         }
 
         public string GetTemplateHtml()
