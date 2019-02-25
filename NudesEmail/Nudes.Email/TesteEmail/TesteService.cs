@@ -18,7 +18,8 @@ namespace TesteEmail
             var template = GetTemplateHtml();
 
             message.Content = template;
-            await _emailService.SendEmailWithBodyTemplate(message.Subject, message.Content, model, email);
+            string strTemplatePath = "Views\\User\\Teste2.cshtml";
+            await _emailService.SendEmailWithBodyTemplate(message.Subject, strTemplatePath , model, email);
         }
 
         public async Task SendEmailTeste(string subject, string content, string email)

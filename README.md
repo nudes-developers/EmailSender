@@ -3,6 +3,7 @@ EmailSender as the name itself already says, was a lib created by SENAI Informát
 
 # Installing
 ###### Using Package Manager Console:
+#
 ```
 Install-Package EmailSender
 ```
@@ -14,29 +15,7 @@ Install-Package EmailSender
 # Examples
 ### We'll first show you the basic implementation of email sending!
 
-##### ViewModel
-#
-```csharp
-public class EmailViewModel
-{
-    public string Subject { get; set; }
-    public string Content { get; set; }
-    public string Email { get; set; }
-}
-```
-
-
-##### POST 
-#
-```csharp
-[HttpPost("email")]
-public async Task SendEmailTest([FromBody] EmailViewModel model)
-{
-    await _testeService.SendEmailTeste(model.Subject, model.Content, model.Email);
-}
-```
-
-##### Service
+#####     Method
 #
 ```csharp
 public async Task SendEmailTeste(string subject, string content, string email)
@@ -48,7 +27,7 @@ public async Task SendEmailTeste(string subject, string content, string email)
 
 ###### *We use a very basic cshtml, just to demonstrate a test implementation of lib*
 #
-##### cshtml used:
+##### With Template:
 #
 ```html
 <b> @Model.Nome </b>
@@ -61,30 +40,16 @@ public async Task SendEmailTeste(string subject, string content, string email)
 ##### Example of implementation:
 #
 ```csharp
-public async Task SendEmail(EmailMessageView message, string email, object model)
+public async Task SendEmailWithTemplate(EmailMessageView message, string email, object model)
 {
-    var template = GetTemplateHtml();
-    message.Content = template;
-    
-    await _emailService.SendEmailWithBodyTemplate(message.Subject, message.Content,model, email);
+    string strTemplatePath = "Views\\User\\Teste2.cshtml";
+    await _emailService.SendEmailWithBodyTemplate(message.Subject, strTemplatePath , model, email);
 }
 ```
 
-### Startup.cs
-##### We must enter smtp settings in startup, smtp settings can be added in Users Secrets.
 
-```csharp
-{
-  "EmailConfigs": {
-    "provider": "smtp.gmail.com",
-    "emailFrom": "no-reply@gmail.com",
-    "port": 587,
-    "networkCredentialEmail": "emailTest@gmail.com",
-    "networkCredentialPassword": "password"
-  }
-}
-```
-
+### Configuration
+##### We must enter smtp settings in startup
 ###### Use SmtpEmailServiceConfiguration for your email sending settings 
 #
 ```csharp
@@ -100,3 +65,5 @@ public void ConfigureServices(IServiceCollection services)
         Port = Convert.ToInt32(Configuration["EmailConfigs:Port"]),
     });
 }
+```
+
