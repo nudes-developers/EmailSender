@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nudes.Email", "Nudes.Email\Nudes.Email.csproj", "{2860542D-3E3D-4A60-933C-D697006FD27E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nudes.Email", "..\src\Nudes.Email\Nudes.Email.csproj", "{2860542D-3E3D-4A60-933C-D697006FD27E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nudes.Email.Smtp", "Nudes.Email.Smtp\Nudes.Email.Smtp.csproj", "{1F8EF1BD-FAEB-4567-B9BC-FF8095CAA2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nudes.Email.Smtp", "..\src\Nudes.Email.Smtp\Nudes.Email.Smtp.csproj", "{1F8EF1BD-FAEB-4567-B9BC-FF8095CAA2D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteEmail", "TesteEmail\TesteEmail.csproj", "{8B4CCDE3-F4B6-48A9-AA07-E4A0E0EDF473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "..\samples\SampleASPNet\Sample.csproj", "{8E98661C-1FFF-43EA-A293-F87FB6799862}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{1F8EF1BD-FAEB-4567-B9BC-FF8095CAA2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8EF1BD-FAEB-4567-B9BC-FF8095CAA2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8EF1BD-FAEB-4567-B9BC-FF8095CAA2D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B4CCDE3-F4B6-48A9-AA07-E4A0E0EDF473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B4CCDE3-F4B6-48A9-AA07-E4A0E0EDF473}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B4CCDE3-F4B6-48A9-AA07-E4A0E0EDF473}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B4CCDE3-F4B6-48A9-AA07-E4A0E0EDF473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E98661C-1FFF-43EA-A293-F87FB6799862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E98661C-1FFF-43EA-A293-F87FB6799862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E98661C-1FFF-43EA-A293-F87FB6799862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E98661C-1FFF-43EA-A293-F87FB6799862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,32 +18,18 @@ Install-Package EmailSender
 #####     Method
 #
 ```csharp
+/// <summary>
+/// Send a email via SMTP
+/// </summary>
+/// <param name="subject">It's the email subject</param>
+/// <param name="content">It's the body of the email</param>
+/// <param name="email">Recipient</param>
+/// <returns></returns>
 public async Task SendEmailTeste(string subject, string content, string email)
 {
     // method used to send emails
+	// 
     await _emailService.SendEmail(subject, content, email);
-}
-```
-
-###### *We use a very basic cshtml, just to demonstrate a test implementation of lib*
-#
-##### With Template:
-#
-```html
-<b> @Model.Nome </b>
-@for (int i = 0; i < 10; i++)
-{
-    <b>@Model.Nome @i</b> <br/>
-}
-```
-
-##### Example of implementation:
-#
-```csharp
-public async Task SendEmailWithTemplate(EmailMessageView message, string email, object model)
-{
-    string strTemplatePath = "Views\\User\\Teste2.cshtml";
-    await _emailService.SendEmailWithBodyTemplate(message.Subject, strTemplatePath , model, email);
 }
 ```
 
@@ -56,7 +42,9 @@ public async Task SendEmailWithTemplate(EmailMessageView message, string email, 
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-    services.AddTransient<TesteService>();
+    
+	services.AddTransient<TesteService>();
+
     services.AddSmtpEmailConfiguration(_ => new SmtpEmailServiceConfiguration
     {
         Host = Configuration["EmailConfigs:Provider"],

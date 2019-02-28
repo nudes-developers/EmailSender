@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Nudes.Email.Smtp;
 using System;
+using Nudes.Email.Smtp;
 
-namespace TesteEmail
+namespace Sample
 {
     public class Startup
     {
