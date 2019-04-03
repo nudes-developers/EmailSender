@@ -1,7 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>NUDES.EmailSender</PackageId>
+    <Version>0.2.0</Version>
+    <Authors>Merhy Daychom, Rodrigo Barros</Authors>
+    <Company>NUDES - SENAI</Company>
+    <IsPackable>true</IsPackable>
+    <PackageTags>email</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
-
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+  </ItemGroup>
 </Project>
