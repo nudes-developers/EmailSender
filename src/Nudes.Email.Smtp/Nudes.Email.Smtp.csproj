@@ -1,17 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>NUDES.EmailSender.Smtp</PackageId>
+    <Version>0.2.0</Version>
+    <Authors>Merhy Daychom, Rodrigo Barros</Authors>
+    <Company>NUDES - SENAI</Company>
+    <IsPackable>true</IsPackable>
+    <PackageTags>email, smtp</PackageTags>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\Nudes.Email\Nudes.Email.csproj" />
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
   </ItemGroup>
-
   <ItemGroup>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Nudes.Email\Nudes.Email.csproj"/>
+  </ItemGroup>  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0"/>
   </ItemGroup>
-
 </Project>
